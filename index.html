@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La última linterna - Chatbot</title>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #f0e6d2 url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+      color: #333;
+    }
+
+    .story-container {
+      max-width: 750px;
+      background: rgba(255, 250, 240, 0.95);
+      border: 2px solid #d4af37;
+      border-radius: 15px;
+      padding: 35px 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      line-height: 1.7;
+      font-size: 1.1em;
+    }
+
+    .story-container h2 {
+      font-family: 'MedievalSharp', cursive;
+      font-size: 2.2em;
+      color: #b87d25;
+      text-align: center;
+      margin-bottom: 25px;
+      text-shadow: 1px 1px 2px #aaa;
+    }
+
+    .story-container p {
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    .story-container strong {
+      font-weight: 500;
+      color: #8c5e2c;
+    }
+
+    /* Chatbot estilo discreto */
+    df-messenger {
+      z-index: 999;
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      --df-messenger-font-color: #000;
+      --df-messenger-font-family: 'Roboto', sans-serif;
+      --df-messenger-chat-background: #f3f6fc;
+      --df-messenger-message-user-background: #d3e3fd;
+      --df-messenger-message-bot-background: #fff;
+    }
+
+    @media(max-width: 600px){
+      .story-container {
+        padding: 25px 20px;
+        font-size: 1em;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+  <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+</head>
+<body>
+
+  <div class="story-container">
+    <h2>La última linterna</h2>
+    <p><strong>Capítulo I: El despertar de las sombras</strong></p>
+    <p>En un pueblo olvidado entre montañas, donde el sol parecía cada vez más débil y las noches se alargaban sin remedio, vivía Lucía, una muchacha de dieciséis años con más preguntas que respuestas. El invierno había llegado demasiado pronto, y las calles permanecían en penumbra incluso durante el día.</p>
+    <p>Los ancianos murmuraban que el mundo estaba pagando un castigo antiguo, pero Lucía sospechaba que había algo más. Una tarde, mientras rebuscaba en el desván de su abuelo, encontró una linterna extraña: de cobre ennegrecido, cubierta de símbolos que parecían arder débilmente al tacto.</p>
+    <p>Su abuelo, don Ernesto, al verla palideció.</p>
+    <p>—Esa linterna pertenece a los Guardianes de la Aurora —dijo con voz temblorosa—. Hace siglos juraron proteger la luz del mundo junto a los dragones, pero la Hermandad de las Sombras rompió el pacto. Desde entonces, todo se oscurece.</p>
+    <p>Lucía acarició la linterna con curiosidad.</p>
+    <p>—Si esta luz fue un pacto… ¿qué pasaría si volviera a encenderse?</p>
+    <p>Esa misma noche, incapaz de resistir su impulso, salió al bosque acompañada de su inseparable amigo Tomás, un chico de carácter práctico que nunca creía en las viejas leyendas.</p>
+    <p>—Lucía, esto es una locura —protestó mientras avanzaban—. Tu abuelo dijo que era peligroso.</p>
+    <p>Ella no respondió. En medio del claro, levantó la linterna y, con un giro, la encendió. Una llama azul brotó, iluminando el bosque como si el día hubiera regresado por un instante.</p>
+    <p>El suelo retumbó. Los árboles crujieron. Y, entre las sombras, emergió una criatura gigantesca: un dragón escarlata, con ojos dorados como soles prisioneros y alas que podían cubrir el cielo entero.</p>
+    <p>Tomás se quedó helado.</p>
+    <p>—¡Un dragón… real!</p>
+    <p>La criatura los observó con solemnidad, y su voz resonó directamente en sus mentes:</p>
+    <p>—Soy Drakan, guardián del fuego eterno. ¿Quién osa portar la última chispa del pacto?</p>
+    <p>Lucía, aunque temblaba, sostuvo la linterna con firmeza.</p>
+    <p>—Soy Lucía… y quiero devolver la luz al mundo.</p>
+    <p>El dragón rugió, y de sus fauces brotó un fuego azul que no quemaba, sino que iluminaba.</p>
+    <p>—Entonces, niña del invierno, tu destino acaba de comenzar. Despertarás a los dragones dormidos, y con ellos, a las sombras que ansían destruirlo todo.</p>
+    <p>Tomás dio un paso atrás, aterrado.</p>
+    <p>—Lucía, no podemos enfrentarnos a eso…</p>
+    <p>Ella lo miró con determinación.</p>
+    <p>—No elegí este camino, Tomás. Pero alguien tiene que recorrerlo.</p>
+    <p>El dragón desplegó sus alas, y el bosque entero se llenó de un resplandor cegador. Así inició el viaje que cambiaría no solo el destino de Lucía y Tomás, sino el de todo el mundo.</p>
+  </div>
+
+  <df-messenger
+    project-id="base-de-conocimiento-473714"
+    agent-id="eccc29dd-84fd-494c-9cf9-31289b0aa241"
+    language-code="es"
+    max-query-length="-1">
+    <df-messenger-chat-bubble chat-title="boot_Lesly"></df-messenger-chat-bubble>
+  </df-messenger>
+
+</body>
+</html>
